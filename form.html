@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Information Form</title>
+    <style>
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes gradientBackground {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #fff, #fad0c4, #f90a12);
+            /*background: linear-gradient(135deg, #ff9a9e, #fad0c4, #ff9a9e);*/
+            background-size: 600% 600%;
+            animation: gradientBackground 15s ease infinite;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            cursor: default;
+        }
+
+        form {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            width: 400px;
+            position: relative;
+            overflow: hidden;
+            transform: perspective(1000px) rotateX(0deg);
+            transition: transform 0.5s, box-shadow 0.5s;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        form::before {
+            content: '';
+            position: absolute;
+            top: -80px;
+            left: -80px;
+            width: 160px;
+            height: 160px;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4, #ff9a9e);
+            border-radius: 50%;
+            filter: blur(10px);
+        }
+
+        form:hover {
+            transform: perspective(1000px) rotateX(10deg);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        select:focus {
+            border-color: #ff6b6b;
+            box-shadow: inset 0 0 10px rgba(255, 107, 107, 0.5);
+        }
+
+        input[type="checkbox"] {
+            margin-right: 10px;
+            transform: scale(1.3);
+            cursor: pointer;
+        }
+
+        input[type="submit"] {
+            background: linear-gradient(135deg, #ff6b6b, #fad0c4, #ff6b6b);
+            color: #fff;
+            border: none;
+            padding: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 18px;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4, #ff9a9e);
+            transform: scale(1.05);
+        }
+
+        fieldset {
+            border: none;
+            margin-bottom: 20px;
+        }
+
+        legend {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        ::placeholder {
+            color: #999;
+        }
+
+        @media (max-width: 450px) {
+            form {
+                width: 90%;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <form action="form.html" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required placeholder="Enter your name">
+
+        <label for="roll">Roll Number:</label>
+        <input type="number" id="roll" name="roll" required placeholder="Enter your roll number">
+
+        <label for="branch">Branch:</label>
+        <select id="branch" name="branch" required>
+            <option value="">Select Branch</option>
+            <option value="cse">CSE</option>
+            <option value="ece">ECE</option>
+            <option value="aids">AIDS</option>
+        </select>
+
+        <label for="year">Year:</label>
+        <input type="number" id="year" name="year" min="1" max="4" required placeholder="Enter your year">
+
+        <fieldset>
+            <legend>Courses:</legend>
+            <label><input type="checkbox" name="course" value="epam"> EPAM</label>
+            <label><input type="checkbox" name="course" value="dL"> DL</label>
+            <label><input type="checkbox" name="course" value="PSS"> PSS-2</label>
+            <label><input type="checkbox" name="course" value="sdc"> SDC</label>
+            <label><input type="checkbox" name="course" value="dav"> DAV</label>
+        </fieldset>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
