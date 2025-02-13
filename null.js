@@ -1,3 +1,3 @@
-let sampleView = "HEllo";
+let sampleView = "Welcome to ASL Laptop";
 
 console.log(sampleView)

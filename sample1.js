@@ -1,2 +1,2 @@
-document.write("This is HTML Page from JS File Printing<br><br>");
-document.write("10,20,30,40,50");
+document.write("This is sai lakshmikanth<br><br>");
+document.write("2210030222,2210030184,2210030225");

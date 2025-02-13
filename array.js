@@ -1,19 +1,15 @@
 // Creating an array
-let fruits = ["Apple", "Banana", "Cherry"];
+let nam = ["sai", "joshita", "Cherry","hementh"];
 
-// Accessing elements
-console.log(fruits[0]); // Output: Apple
+console.log(nam[0]); 
 
-// Adding an element to the end
-fruits.push("Mango");
-console.log(fruits); // Output: ["Apple", "Banana", "Cherry", "Mango"]
+nam.push("asl");
+console.log(nam);
 
-// Removing the last element
-fruits.pop();
-console.log(fruits); // Output: ["Apple", "Banana", "Cherry"]
+nam.pop();
+console.log(nam); 
 
-// Iterating through an array
-fruits.forEach(fruit => console.log(fruit));
 
-// Finding an element
-console.log(fruits.includes("Banana")); // Output: true
+nam.forEach(nam => console.log(nam));
+
+console.log(nam.includes("likhi")); 
