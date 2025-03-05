@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Data Types</title>
+</head>
+<body>
+    <h1>JavaScript Data Types</h1>
+    <button onclick="showDataTypes()">Show Data Types</button>
+    <p id="output"></p>
+    
+    <script>
+        function showDataTypes() {
+            let stringVar = "Hello, World!";
+            let numberVar = 42;
+            let booleanVar = true;
+            let undefinedVar;
+            let nullVar = null;
+            let objectVar = { name: "John", age: 30 };
+            let arrayVar = [1, 2, 3, 4, 5];
+            let functionVar = function() { return "I am a function"; };
+            let symbolVar = Symbol("unique");
+            let bigIntVar = BigInt(9007199254740991);
+
+            let output = `
+                String: ${stringVar} <br>
+                Number: ${numberVar} <br>
+                Boolean: ${booleanVar} <br>
+                Undefined: ${undefinedVar} <br>
+                Null: ${nullVar} <br>
+                Object: ${JSON.stringify(objectVar)} <br>
+                Array: ${JSON.stringify(arrayVar)} <br>
+                Function: ${functionVar()} <br>
+                Symbol: ${symbolVar.toString()} <br>
+                BigInt: ${bigIntVar} <br>
+            `;
+
+            document.getElementById("output").innerHTML = output;
+        }
+    </script>
+</body>
+</html>

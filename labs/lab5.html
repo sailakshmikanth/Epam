@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Data Types & Profit Calculator</title>
+</head>
+<body>
+   
+    
+    <h1>Deposit Profit Calculator</h1>
+    <button onclick="calculateProfit()">Calculate Profit</button>
+    <p id="profitOutput"></p>
+    
+    <script>
+        function showDataTypes() {
+            
+
+            let output = `
+                String: ${stringVar} <br>
+                Number: ${numberVar} <br>
+                Boolean: ${booleanVar} <br>
+                Undefined: ${undefinedVar} <br>
+                Null: ${nullVar} <br>
+                Object: ${JSON.stringify(objectVar)} <br>
+                Array: ${JSON.stringify(arrayVar)} <br>
+                Function: ${functionVar()} <br>
+                Symbol: ${symbolVar.toString()} <br>
+                BigInt: ${bigIntVar} <br>
+            `;
+
+            document.getElementById("output").innerHTML = output;
+        }
+
+        function calculateProfit() {
+            let initialAmount = parseFloat(prompt("Enter the initial deposit amount:"));
+            if (isNaN(initialAmount) || initialAmount <= 0) {
+                document.getElementById("profitOutput").innerHTML = "Please enter a valid amount.";
+                return;
+            }
+            let interestRate = 0.05;
+            let profit = initialAmount * interestRate;
+            document.getElementById("profitOutput").innerHTML = `Your profit is: $${profit.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>
