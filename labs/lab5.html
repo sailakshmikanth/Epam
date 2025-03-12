@@ -13,24 +13,7 @@
     <p id="profitOutput"></p>
     
     <script>
-        function showDataTypes() {
-            
-
-            let output = `
-                String: ${stringVar} <br>
-                Number: ${numberVar} <br>
-                Boolean: ${booleanVar} <br>
-                Undefined: ${undefinedVar} <br>
-                Null: ${nullVar} <br>
-                Object: ${JSON.stringify(objectVar)} <br>
-                Array: ${JSON.stringify(arrayVar)} <br>
-                Function: ${functionVar()} <br>
-                Symbol: ${symbolVar.toString()} <br>
-                BigInt: ${bigIntVar} <br>
-            `;
-
-            document.getElementById("output").innerHTML = output;
-        }
+       
 
         function calculateProfit() {
             let initialAmount = parseFloat(prompt("Enter the initial deposit amount:"));
